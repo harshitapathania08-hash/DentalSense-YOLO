@@ -12,11 +12,11 @@ from huggingface_hub import hf_hub_download
 
 model_path = hf_hub_download(
     repo_id="harshita-pathania/DentalSense-YOLO",
-    filename="best.pt",
+    filename="best.onnx",
     token=os.getenv("HF_TOKEN")
 )
 
-model = YOLO(model_path)
+model = YOLO(model_path, task="detect")
 
 app = FastAPI(title="DentalSense API")
 
