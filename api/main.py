@@ -32,13 +32,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-model_path = hf_hub_download(
-    repo_id="harshita-pathania/DentalSense-YOLO",
-    filename="best.pt",
-    repo_type="model"
-)
 
-model = YOLO(model_path)
 
 
 @app.get("/health")
