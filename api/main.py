@@ -8,6 +8,16 @@ import base64
 import os
 from huggingface_hub import hf_hub_download
 
+
+
+model_path = hf_hub_download(
+    repo_id="harshita-pathania/DentalSense-YOLO",
+    filename="best.pt",
+    token=os.getenv("HF_TOKEN")
+)
+
+model = YOLO(model_path)
+
 app = FastAPI(title="DentalSense API")
 
 app.add_middleware(
