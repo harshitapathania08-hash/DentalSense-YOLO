@@ -6,6 +6,7 @@ from PIL import Image
 from io import BytesIO
 import base64
 import os
+from huggingface_hub import hf_hub_download
 
 app = FastAPI(title="DentalSense API")
 
@@ -17,7 +18,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-model_path = os.getenv("MODEL_URL", "best.pt")
+model_path = hf_hub_download(
+    repo_id="harshita-pathania/DentalSense-YOLO",
+    filename="best.pt",
+    repo_type="model"
+)
+
 model = YOLO(model_path)
 
 
