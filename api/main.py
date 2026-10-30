@@ -54,7 +54,9 @@ async def predict(file: UploadFile = File(...)):
     except Exception:
         raise HTTPException(status_code=400, detail="Invalid image file.")
 
+    print("PREDICT: Starting YOLO inference", flush=True)
     results = model.predict(image, imgsz=640, conf=0.25, device="cpu", verbose=False)
+    print("PREDICT: YOLO inference completed", flush=True)
     result = results[0]
 
     detections = []
