@@ -5,6 +5,7 @@ from ultralytics import YOLO
 from PIL import Image
 from io import BytesIO
 import base64
+import os
 
 app = FastAPI(title="DentalSense API")
 
@@ -16,7 +17,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-model = YOLO("api/best.pt")
+model_path = os.getenv("MODEL_URL", "best.pt")
+model = YOLO(model_path)
 
 
 @app.get("/health")
