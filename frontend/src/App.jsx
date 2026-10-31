@@ -27,7 +27,7 @@ import {
 } from "recharts";
 import "./App.css";
 
-const API_URL = "https://dentalsense-api.onrender.com";
+const API_URL = "/api";
 
 const navigation = [
   { id: "main", label: "Dental Screening", icon: ScanSearch },
