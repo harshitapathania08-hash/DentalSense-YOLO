@@ -9,7 +9,6 @@ import {
   ImagePlus,
   LoaderCircle,
   ScanSearch,
-  ShieldCheck,
   Upload,
   X,
   BookOpen,
