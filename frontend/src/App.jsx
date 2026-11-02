@@ -391,7 +391,7 @@ function App() {
 
         <div className="sidebar-footer">
           <ShieldCheck size={16} />
-          <span>For research use only</span>
+          
         </div>
       </aside>
 
