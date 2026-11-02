@@ -389,7 +389,7 @@ function App() {
         </div>
 
         <div className="sidebar-footer">
-          <ShieldCheck size={16} />
+          
           
         </div>
       </aside>
