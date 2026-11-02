@@ -36,7 +36,6 @@ const navigation = [
 
 
   { id: "graphs", label: "Finding Distribution", icon: BarChart3 },
-  { id: "performance", label: "Model Performance", icon: Gauge },
 ];
 
 const classMetrics = [
@@ -845,55 +844,6 @@ function App() {
           </section>
         )}
 
-        {page === "performance" && (
-          <section className="page-section">
-            <PageHeader
-              eyebrow="TECHNICAL DETAILS"
-              title="Model Performance"
-              description="Held-out test results for the experimental YOLOv8 detector."
-            />
-
-            <div className="metrics-grid">
-              {testMetrics.map((metric) => (
-                <MetricCard
-                  key={metric.label}
-                  label={metric.label}
-                  value={metric.value}
-                />
-              ))}
-            </div>
-
-            <div className="panel">
-              <SectionTitle
-                icon={BarChart3}
-                title="Class-wise test performance"
-                description="mAP@50 on 65 held-out panoramic X-rays"
-              />
-              <ClassChart />
-        
-            </div>
-
-            <div className="summary-grid" style={{ marginTop: 18 }}>
-              <MetricCard
-                label="Test images"
-                value="65"
-                detail="Held-out X-rays"
-              />
-              <MetricCard
-                label="Test instances"
-                value="474"
-                detail="Annotated objects"
-              />
-              <MetricCard
-                label="Inference time"
-                value="101.8 ms"
-                detail="Per image on CPU"
-              />
-            </div>
-
-       
-          </section>
-        )}
       </main>
     </div>
   );
